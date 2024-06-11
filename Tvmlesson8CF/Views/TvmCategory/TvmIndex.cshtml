@@ -1,0 +1,33 @@
+﻿@model IEnumerable<Tvmlesson8CF.Models.TvmCategory>
+
+@{
+    ViewBag.Title = "TvmIndex";
+}
+
+<h2>TvmIndex</h2>
+
+<p>
+    @Html.ActionLink("Tvm:Create New", "TvmCreate")
+</p>
+<table class="table table-bordered">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.TvmCategoryName)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.TvmCategoryName)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.TvmCategoryId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.TvmCategoryId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.TvmCategoryId })
+        </td>
+    </tr>
+}
+
+</table>
